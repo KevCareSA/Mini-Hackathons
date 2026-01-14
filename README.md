@@ -23,10 +23,12 @@ Each mini hackathon is a time-boxed project with:
 
 Each hackathon will live in its own folder:
 
-
+```text
 mini-hackathons/
 │
 ├── 01-DashBoard/
 ├── 02-.../
 ├── 03-.../
 └── ...
+
+```
