@@ -1,16 +1,55 @@
-# React + Vite
+# 🏁 Mini Hackathons – Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is part of my **weekly / bi-weekly mini-hackathon challenge** where I build small, complete projects to push my learning in:
 
-Currently, two official plugins are available:
+- React
+- Vite
+- Tailwind CSS
+- UI/UX layout and component structure
+- Real-world frontend patterns
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The goal is simple:  
+**Build fast. Learn deeply. Ship often.**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Purpose
 
-## Expanding the ESLint configuration
+Each mini hackathon focuses on:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Designing a real interface (not toy examples)
+- Structuring components cleanly
+- Practicing layout, state, and visuals
+- Improving speed and confidence through repetition
+
+This Dashboard project is one of those iterations.
+
+---
+
+## 🧱 Current Features
+
+- Glassmorphism sidebar layout
+- Gradient background system
+- Responsive structure (desktop & mobile aware)
+- Component-based architecture (App, Sidebar, etc.)
+- Tailwind utility-first styling
+- Icon integration (Lucide)
+
+---
+
+## 🛠️ Tech (implicitly used)
+
+- React (with Vite)
+- Tailwind CSS
+- Modern ES Modules
+- Component-driven UI
+
+(I keep the stack minimal and focused for learning speed.)
+
+---
+
+## 🚀 Running Locally
+
+```bash
+npm install
+npm run dev
