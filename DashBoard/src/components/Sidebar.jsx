@@ -1,16 +1,15 @@
 import React from 'react'
+import { Sparkle, Crown } from 'lucide-react'
 
 function Sidebar() {
   return (
     <div className={'fixed inset-y-0 left-0 z-50 w-80 bg-white/10 backdrop-blur-2xl border-r border-white/20 transform transition-all duration-500 ease-out lg:translate-x-0 lg:static lg:inset-0'}>
          <div className="flex items-center justify-between h-20 px-8 border-b border-white/20">
                 <div className='flex items-center space-x-4'>
-                    <div className='relative'>
+                    <div cla0s0sName='relative'>
                         <div className='w-12 h-12 bg-gradient-to-r from-purple-700 to-blue-600 rounded-2xl 
                             flex items-center justify-center shadow-2xl'>  
-                            <h1>Kev</h1>
-                            {/* <Sparkle className="w-6 h-6 text-white" /> */}
-
+                            <Sparkle className="w-6 h-6 text-white" />
                         </div>
                     </div>
                     <div>
@@ -42,7 +41,23 @@ function Sidebar() {
 
                 </button>
             </nav>
-        </div>
+
+            <div className='absolute bottom-0 left-0 right-0 p-6'>
+                <div className='relative overflow-hidden bg-gradient-to-r from-purple-500/20
+                to-pink-500/20 backdrop-blur-sm rounded-3xl p-6 border border-white/20'>
+                    <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-br 
+                    from-white/10 to-transparent rounded-full transform translate-x-10 
+                    translate-y-10'></div>
+                        <div className='relative'>
+                            <div className='flex items-center space-x-3 mb-4'>
+                                <div className='p-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl'>
+                                <Crown />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
   )
 }
 
