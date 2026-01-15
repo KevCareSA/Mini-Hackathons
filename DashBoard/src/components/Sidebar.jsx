@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sparkle, Crown } from 'lucide-react'
+import { Sparkle, Crown, Rocket } from 'lucide-react'
 
 function Sidebar() {
   return (
@@ -51,9 +51,19 @@ function Sidebar() {
                         <div className='relative'>
                             <div className='flex items-center space-x-3 mb-4'>
                                 <div className='p-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl'>
-                                <Crown />
+                                    <Crown className="w-6 h-6 text-white" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white font-bold'>Premium Member</h3>
+                                    <p className='text-white/60 text-xs '>Advanced Analytics</p>
                                 </div>
                             </div>
+                            <button className='w-full bg-gradient-to-r to-purple-600 hover:scale-105 
+                            hover: shadow-2xl text-white font-bold py-3 rounded-2xl 
+                            transition-all duration-300'>
+                                <Rocket className="w-5 h-5 inline-block mr-2" />
+                                Upgrade Now
+                            </button>
                         </div>
                     </div>
                 </div>
