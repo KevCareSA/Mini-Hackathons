@@ -1,12 +1,14 @@
 import React from 'react'
-import { Sparkle, Crown, Rocket } from 'lucide-react'
+import { Sparkle, Crown, Rocket, X } from 'lucide-react'
+import { useState } from 'react'
+import { menuItems } from '../../data/data'
 
-function Sidebar() {
+function Sidebar({ sidebar, setSidebarOpen, activeTab, setActiveTab }) {
   return (
-    <div className={'fixed inset-y-0 left-0 z-50 w-80 bg-white/10 backdrop-blur-2xl border-r border-white/20 transform transition-all duration-500 ease-out lg:translate-x-0 lg:static lg:inset-0'}>
+    <div className={`${sidebar ? "translate-x-0" : "-translate-x-full"} fixed inset-y-0 left-0 z-50 w-80 bg-white/10 backdrop-blur-2xl border-r border-white/20 transform transition-all duration-500 ease-out lg:translate-x-0 lg:static lg:inset-0 flex flex-col`}>
          <div className="flex items-center justify-between h-20 px-8 border-b border-white/20">
                 <div className='flex items-center space-x-4'>
-                    <div cla0s0sName='relative'>
+                    <div className='relative'>
                         <div className='w-12 h-12 bg-gradient-to-r from-purple-700 to-blue-600 rounded-2xl 
                             flex items-center justify-center shadow-2xl'>  
                             <Sparkle className="w-6 h-6 text-white" />
@@ -21,28 +23,33 @@ function Sidebar() {
                             PREMIUM SHANDIS</p>
                     </div>
                 </div>
-                <button className='lg:hidden text-white/70 hover:text-white p-2 roundwered-xl 
-                hover:bg-white/10 transition-colors'>
-                    {/*<X className="w-6 h-6" /> */}
+                <button className='lg:hidden text-white/70 hover:text-white p-2 rounded-xl 
+                hover:bg-white/10 transition-colors' onClick={() => setSidebarOpen(false)}>
+                    <X className="w-6 h-6" />
                 </button>
             </div>
 
-            <nav className='mt-8 px-6 space-y-2'>
-                <button className={'w-full flex items-center px-6 py-4 text-left rounded-2xl transition-all duration-300 group relative overflow-hidden'}>
-                    {/* conditional rendering */}
-                    {/* <div className={'absolute inset-0 bg-gradient-to-r opacity-30 rounded-2xl'}>
-                    </div> */}
-                    <div className={'p-2 rounded-xl bg-gradient-to-r mr-4 group-hover:scale-110 transition-all duration-300 relative z-10'}>
-                        Item Icon
-                    </div>
-                    <span className='font-semibold relative z-10'>
-                        Item Label
-                    </span>
-
-                </button>
+            <nav className='flex-1 mt-8 px-6 space-y-2 overflow-y-auto'>
+                {/* map through nav items */}
+                {menuItems.map((item) => { 
+                    return (
+                        <button key={item.id}
+                         className={`w-full flex items-center px-6 py-4 text-left rounded-2xl transition-all duration-300 group relative overflow-hidden ${activeTab === item.id ? "bg-white/20 text-white shadow-2xl scale-105": "text-white/70 hover:text-white hover:bg-white/10 hover:scale-105" }`}>
+                            {/* conditional rendering */}
+                            {/* <div className={'absolute inset-0 bg-gradient-to-r opacity-30 rounded-2xl'}>
+                            </div> */}
+                            <div className={'p-2 rounded-xl bg-gradient-to-r mr-4 group-hover:scale-110 transition-all duration-300 relative z-10'}>
+                                Item Icon
+                            </div>
+                            <span className='font-semibold relative z-10'>
+                                Item Label
+                            </span>
+                        </button>
+                    );
+                })}  
             </nav>
 
-            <div className='absolute bottom-0 left-0 right-0 p-6'>
+            <div className='p-6'>
                 <div className='relative overflow-hidden bg-gradient-to-r from-purple-500/20
                 to-pink-500/20 backdrop-blur-sm rounded-3xl p-6 border border-white/20'>
                     <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-br 
