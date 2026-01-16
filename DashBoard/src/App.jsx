@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from './components/Sidebar'
+import { useState } from 'react'
 
 function App() {
   const [sidebar, setSidebarOpen] = useState(false);
