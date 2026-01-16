@@ -5,7 +5,10 @@ import { menuItems } from '../../data/data'
 
 function Sidebar({ sidebar, setSidebarOpen, activeTab, setActiveTab }) {
   return (
+    // Root sidebar container: fixed position, full height, width 80, semi-transparent with blur effect
     <div className={`${sidebar ? "translate-x-0" : "-translate-x-full"} fixed inset-y-0 left-0 z-50 w-80 bg-white/10 backdrop-blur-2xl border-r border-white/20 transform transition-all duration-500 ease-out lg:translate-x-0 lg:static lg:inset-0 flex flex-col`}>
+         
+         {/* Header section: Logo + App name + Mobile close button */}
          <div className="flex items-center justify-between h-20 px-8 border-b border-white/20">
                 <div className='flex items-center space-x-4'>
                     <div className='relative'>
@@ -14,6 +17,8 @@ function Sidebar({ sidebar, setSidebarOpen, activeTab, setActiveTab }) {
                             <Sparkle className="w-6 h-6 text-white" />
                         </div>
                     </div>
+
+                    {/* App branding text */}
                     <div>
                         <h1 className='text-2xl font-bold bg-gradient-to-r from-white to-white/80 
                         bg-clip-text text-transparent '>
@@ -29,6 +34,7 @@ function Sidebar({ sidebar, setSidebarOpen, activeTab, setActiveTab }) {
                 </button>
             </div>
 
+            {/* navigation div within the sidebar */}
             <nav className='flex-1 mt-8 px-6 space-y-2 overflow-y-auto'>
                 {/* map through nav items */}
                 {menuItems.map((item) => { 
@@ -49,6 +55,10 @@ function Sidebar({ sidebar, setSidebarOpen, activeTab, setActiveTab }) {
                 })}  
             </nav>
 
+
+             {/* Footer / Upgrade card section:
+                - Always stays at bottom due to flex layout
+                - Promotional CTA area */}
             <div className='p-6'>
                 <div className='relative overflow-hidden bg-gradient-to-r from-purple-500/20
                 to-pink-500/20 backdrop-blur-sm rounded-3xl p-6 border border-white/20'>
