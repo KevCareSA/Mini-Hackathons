@@ -20,12 +20,14 @@ function App() {
          activeTab={activeTab}
           setActiveTab={setActiveTab}
           />
+          
+        {/* Header Layout Wrapper */}
+        <div className='flex-1 flex flex-col overflow-hidden'>
+          <Header />
+        </div>
       </div>
 
-      {/* Header Layout Wrapper */}
-      <div className='flex-1 flex flex-col overflow-hidden'>
-        <Header />
-      </div>
+      
     </div>
   );
 }
