@@ -1,37 +1,63 @@
 import { ArrowDown, ArrowUp } from 'lucide-react'
 import React from 'react'
 
-function MetricCard() {
+function MetricCard({ title, value, change, icon: Icon, gradient, subtitle, trend }) {
+
+    const isPositive = change >= 0;
+
   return (
     <div className='group relative overflow-hidden bg-white/10 backdrop-blur-xl
         border border-white/20 rounded-3xl p-8 hover:bg-white/20 transition-all
          duration-500 hover:scale-105 hover:shadow-2xl'>
         {/* Gradient Background */}
-        <div className={`absolute inset-0 bg-gradient-to-br opacity-10 group-hover:opacity-20 
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-10 group-hover:opacity-20 
             transition-opacity duration-500`}> 
         </div>
         <div className='relative z-10'>
             <div className='flex items-center justify-between mb-6 '>
                 <div className={`p-4 rounded-2xl bg-gradient-to-br group-hover:scale-110 
-                transition-all duration-300 shadow-lg`}>
+                transition-all duration-300 shadow-lg ${gradient} `}>
                     {/* Icon can be placed here */}
-                    Icons
+                    {Icon && <Icon className="w-6 h-6 text-white" />}
                 </div>
                 <div className={`flex items-center space-x-1 px-3 py-1 rounded-full text-sm font-bold`}>
                     {/* conditional rendering */}
-                    <ArrowUp />
-                    <ArrowDown />
+                    {isPositive ? <ArrowUp className='h-4 w-4 text-green-400'/> : <ArrowDown className='h-4 w-4 text-red-400' />}
 
-                    <span>Dynamic Content Shandis</span>
+                    <span>{Math.abs(change)}%</span>
                 </div>
             </div>
+
 
              <div className='space-y-2'>
                 <h3 className='text-white/70 text-sm font-medium uppercase tracking-wide'>
-                    Tittle 
+                    {title}
                 </h3>
-                </div>
-            </div>
+                <p className='text-4xl font-bold text-white group-hover:text-transparent
+                    group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/80
+                    group-hover:bg-clip-text transition-all duration-300'>
+                    {value}
+                </p>
+                <p className='text-sm text-white/60'>
+                    {subtitle}
+                    </p>
+             </div>
+        </div>
+
+        {/* Trend Sparkline */}
+        <div className='mt-4 h-12 flex items-end space-x-1'>
+            {/* Map Method */}
+            {trend.map((point, index) => {
+                return (
+                    <div 
+                        key={index} 
+                        className={`bg-gradient-to-t rounded-sm opacity-60 group-hover:opacity-105 transistion-all ${gradient} duration-300`}
+                        style={{ height: `${point / Math.max(...trend) * 100}%`, width: '8px' }}
+                    ></div>
+                );
+            })}
+                
+        </div>
 
     </div>
   )
