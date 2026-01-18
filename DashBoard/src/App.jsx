@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import { useState } from 'react'
+import MetricCard from './components/MetricCard';
 
 function App() {
   const [sidebar, setSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 60000); // Update every minute
+
+    return () => clearInterval(timer); // Cleanup on unmount
+  }, []);
 
   return (
     // Root container: full-screen height + gradient background for the whole app
@@ -23,11 +33,22 @@ function App() {
           
         {/* Header Layout Wrapper */}
         <div className='flex-1 flex flex-col overflow-hidden'>
-          <Header />
-        </div>
-      </div>
+          <Header 
+            currentTime={currentTime}
+            activeTab={activeTab}
+            setSidebarOpen={setSidebarOpen}
+              />
 
-      
+            <main className='flex-1 overflow-hidden p-8 space-y-8'>
+              {/* Main content area */}
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+                <MetricCard />
+              </div>
+            </main>
+            
+        </div>
+
+      </div>  
     </div>
   );
 }
