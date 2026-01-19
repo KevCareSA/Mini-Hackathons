@@ -35,6 +35,7 @@ function Header({ currentTime, activeTab, setSidebarOpen }) {
                  </div>  
              </div>
 
+            {/* ===== Right Section: Search + Notifications + User Info ===== */}
              <div className='flex items-center space-x-4'>
                 <div className='hidden md:flex items-center bg-white/10 backdrop-blur-2xl border
                 border-white/20 rounded-2xl px-6 py-3 w-96 group hover:bg-white/20 transition-all
