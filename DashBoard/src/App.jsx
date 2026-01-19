@@ -5,7 +5,7 @@ import { useState } from 'react'
 import MetricCard from './components/MetricCard';
 import { Banknote, Users, Target, Zap } from 'lucide-react';
 import RevenueAnalytics from './components/RevenueAnalytics';
-import LiveActivityItem from './components/LiveActivityItem';
+import LiveActivityFeed from './components/LiveActivityFeed';
 
 function App() {
   const [sidebar, setSidebarOpen] = useState(false);
@@ -95,7 +95,7 @@ function App() {
                   <RevenueAnalytics />
 
                   {/* Live Activity Feed */}
-                  <LiveActivityItem />
+                  <LiveActivityFeed />
               </div>
             </main>
 
