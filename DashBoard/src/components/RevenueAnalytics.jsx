@@ -1,6 +1,16 @@
 import React from "react";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
 import { revenueData } from "../data/data";
-import { AreaChart } from "lucide-react";
+
 
 function RevenueAnalytics() {
   return (
@@ -30,8 +40,56 @@ function RevenueAnalytics() {
         </div>
       </div>
 
-        <ResponsiveContainer>
-            <AreaChart></AreaChart>
+        <ResponsiveContainer width="100%" height={300}>
+            <AreaChart data={revenueData}>
+                <defs>
+                    <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#06B6D4" stopOpacity={0.4} />
+                        <stop offset="95%" stopColor="#06B6D4" stopOpacity={0} />
+                    </linearGradient>
+
+                    <linearGradient id="colorUsers" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.4} />
+                        <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0} />
+                    </linearGradient>
+                </defs>
+
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                <XAxis dataKey="month" stroke="rgba(255,255,255,0.6)" fontSize={12} />
+                <YAxis stroke="rgba(255,255,255,0.6)" fontSize={12} />
+
+                <Tooltip
+                    contentStyle={{
+                        backgroundColor: "rgba(0, 0, 0, 0.8)",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                        borderRadius: "16px",
+                        color: "#ffffff",
+                        backdropFilter: "blur(16px)",
+                    }}
+                    itemStyle={{ color: "#ffffff" }}
+                    labelStyle={{ color: "#ffffff", fontSize: 12 }}
+                />
+
+                <Area
+                    type="monotone"
+                    dataKey="revenue"
+                    stroke="#06B6D4"
+                    strokeWidth={3}
+                    fillOpacity={1}
+                    fill="url(#colorRevenue)"
+                />
+
+                    <Area
+                    type="monotone"
+                    dataKey="users"
+                    stroke="#8B5CF6"
+                    strokeWidth={3}
+                    fillOpacity={1}
+                    fill="url(#colorUsers)"
+                 />
+
+
+            </AreaChart>
         </ResponsiveContainer>
 
     </div>
