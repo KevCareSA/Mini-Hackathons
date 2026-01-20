@@ -1,5 +1,6 @@
 import React from "react";
 import LiveActivityItem from "./LiveActivityItem";
+import { liveActivities } from "../data/data";
 
 function LiveActivityFeed() {
   return (
@@ -22,7 +23,9 @@ function LiveActivityFeed() {
 
       <div className="space-y-4 max-h-64 overflow-y-auto">
         {/* map method */}
-        <LiveActivityItem />
+        {liveActivities.map((activity, index) => (
+          <LiveActivityItem key={index} activity={activity} />
+        ))}
       </div>
     </div>
   );
