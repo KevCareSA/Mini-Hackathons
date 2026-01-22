@@ -104,7 +104,7 @@ function Sidebar({ sidebar, setSidebarOpen, activeTab, setActiveTab }) {
                             transition-all duration-300"
             >
               <Rocket className="w-5 h-5 inline-block mr-2" />
-              Upgrade Now
+              Full Access
             </button>
           </div>
         </div>
