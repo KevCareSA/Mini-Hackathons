@@ -27,7 +27,7 @@ Each hackathon will live in its own folder:
 mini-hackathons/
 │
 ├── 01-DashBoard/
-├── 02-.../
+├── 02-HotelWebsite
 ├── 03-.../
 └── ...
 
