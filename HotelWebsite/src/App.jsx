@@ -7,11 +7,9 @@ function App() {
   const isOwnerPath = useLocation().pathname.includes('/owner');
 
   return (
-    <div>
-        <div className='min-h-screen bg-gradient-to-br from-white-100 to-gray-400 relative overflow-hidden'>
+        <div className='min-h-screen bg-gradient-to-br from-white to-gray-400 relative overflow-hidden'>
            {!isOwnerPath && <Navbar /> }
         </div>
-    </div>
   )
 }
 
