@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import assets from '../assets/assets';
+import { assets } from '../assets/assets';
+import logo1 from '../assets/logo1.png';
 
 
 function Navbar() {
@@ -14,10 +15,10 @@ function Navbar() {
         { name: 'About', path: '/' },
     ];
 
-    const [isScrolled, setIsScrolled] = React.useState(false);
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
         };
@@ -30,16 +31,16 @@ function Navbar() {
 
                 {/* Logo */}
                 <Link to={"/"}>
-                    <img src={assets.logo} alt="Logo" className={`h-9 ${isScrolled && "invert opacity-80"}`} />
+                    <img src={logo1} alt="Logo" className={`h-15 ${isScrolled && "invert opacity-100"}`} />
                 </Link>
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-4 lg:gap-8">
                     {navLinks.map((link, i) => (
-                        <a key={i} href={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}>
+                        <Link key={i} to={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}>
                             {link.name}
                             <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
-                        </a>
+                        </Link>
                     ))}
                     <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-white'} transition-all`}>
                         New Launch
@@ -76,9 +77,9 @@ function Navbar() {
                     </button>
 
                     {navLinks.map((link, i) => (
-                        <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+                        <Link key={i} to={link.path} onClick={() => setIsMenuOpen(false)}>
                             {link.name}
-                        </a>
+                        </Link>
                     ))}
 
                     <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
