@@ -9,7 +9,7 @@ function App() {
 
   return (
 
-        <div className='min-h-screen bg-gradient-to-r from-white to-gray-400 relative overflow-hidden'>
+        <div className='min-h-screen bg-gradient-to-r from-white to-gray-600 relative overflow-hidden'>
            {!isOwnerPath && <Navbar /> }
            <div className='min-h-[70vh]'>
             <Routes>
