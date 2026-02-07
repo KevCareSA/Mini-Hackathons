@@ -18,7 +18,7 @@ function Hero() {
                 Discover luxury and comfort like never before.
             </p>
 
-        Booking Form
+        {/* Booking Form */}
         <form className='bg-white text-gray-500 rounded-lg px-4 py-2 mt-8 flex flex-col md:flex-row max-md:items-start gap-4 max-md:mx-auto'>
 
             <div>
