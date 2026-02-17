@@ -36,11 +36,11 @@ const HotelCard = ({room, index}) => {
                 <p>
                     <span className='text-lg text-gray-800'>
                         R{room.pricePerNight} 
-                    </span>/night
+                    </span>/ night
                 </p>
 
                 <button className='px-4 py-2 text-sm font-medium border 
-                    border-gray-300 rounded hover:bg-gray-50 transition-all
+                    border-gray-500 rounded hover:bg-gray-50 transition-all
                     cursor-pointer'>
                     Book Now
                 </button>
