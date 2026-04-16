@@ -4,14 +4,14 @@ import { assets } from '../assets/assets'
 function Footer() {
   return (
     <div>
-        <div class="bg-[#F6F9C] flex flex-col md:flex-row items-start justify-center gap-10 py-10 border-b border-gray-500/30">
+        <div className="bg-[#F6F9C] flex flex-col md:flex-row items-start justify-center gap-10 py-10 border-b border-gray-500/30">
         
-            <div class="max-w-96">
+            <div className="max-w-96">
                 <img src={assets.logo} alt="" className='mb-4 h-8 md:h-9 brightness-0' />
-                <p class="mt-6 text-sm text-gray-500">
+                <p className="mt-6 text-sm text-gray-500">
                     Experience the epitome of hospitality at our hotel, where comfort meets elegance. Our dedicated team is committed to providing exceptional service, ensuring your stay is unforgettable. 
                 </p>
-                <div class="flex items-center gap-2 mt-3">
+                <div className="flex items-center gap-2 mt-3">
                     <a href="#">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19.167 2.5a9.1 9.1 0 0 1-2.617 1.275 3.733 3.733 0 0 0-6.55 2.5v.833a8.88 8.88 0 0 1-7.5-3.775s-3.333 7.5 4.167 10.833a9.7 9.7 0 0 1-5.834 1.667C8.333 20 17.5 15.833 17.5 6.25q0-.35-.067-.692A6.43 6.43 0 0 0 19.167 2.5" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -30,10 +30,10 @@ function Footer() {
                 </div>
             </div>
 
-            <div class="w-1/2 flex flex-wrap md:flex-nowrap justify-between">
+            <div className="w-1/2 flex flex-wrap md:flex-nowrap justify-between">
                 <div>
-                    <h2 class="font-semibold text-gray-900 mb-5">RESOURCES</h2>
-                    <ul class="text-sm text-gray-500 space-y-2 list-none">
+                    <h2 className="font-semibold text-gray-900 mb-5">RESOURCES</h2>
+                    <ul className="text-sm text-gray-500 space-y-2 list-none">
                         <li><a href="#">Documentation</a></li>
                         <li><a href="#">Tutorials</a></li>
                         <li><a href="#">Blog</a></li>
@@ -41,8 +41,8 @@ function Footer() {
                     </ul>
                 </div>
                 <div>
-                    <h2 class="font-semibold text-gray-900 mb-5">COMPANY</h2>
-                    <div class="text-sm text-gray-500 space-y-2 list-none">
+                    <h2 className="font-semibold text-gray-900 mb-5">COMPANY</h2>
+                    <div className="text-sm text-gray-500 space-y-2 list-none">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Privacy</a></li>
@@ -53,7 +53,7 @@ function Footer() {
 
     </div>
 
-        <p class="py-4 text-center text-xs md:text-sm text-gray-500">
+        <p className="py-4 text-center text-xs md:text-sm text-gray-500">
             Copyright 2026 © <a href="https://prebuiltui.com">Hotel KevCare</a>. All Right Reserved.
         </p>
 
