@@ -39,15 +39,15 @@ function Footer() {
                     </ul>
                 </div>
 
-                <div class="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
+                <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
                     <div>
-                        <h3 class="font-semibold text-gray-900 mb-5">QUICK LINKS</h3>
-                        <ul class="mt-3 flex flex-col gap-2 text-sm text-gray-500 list-none">
-                            <li><a href="#" class="hover:underline transition">Home</a></li>
-                            <li><a href="#" class="hover:underline transition">Best Sellers</a></li>
-                            <li><a href="#" class="hover:underline transition">Offers & Deals</a></li>
-                            <li><a href="#" class="hover:underline transition">Contact Us</a></li>
-                            <li><a href="#" class="hover:underline transition">FAQs</a></li>
+                        <h3 className="font-semibold text-gray-900 mb-5">QUICK LINKS</h3>
+                        <ul className="mt-3 flex flex-col gap-2 text-sm text-gray-500 list-none">
+                            <li><a href="#" className="hover:underline transition">Home</a></li>
+                            <li><a href="#" className="hover:underline transition">Best Sellers</a></li>
+                            <li><a href="#" className="hover:underline transition">Offers & Deals</a></li>
+                            <li><a href="#" className="hover:underline transition">Contact Us</a></li>
+                            <li><a href="#" className="hover:underline transition">FAQs</a></li>
                         </ul>
                     </div>
                </div>
