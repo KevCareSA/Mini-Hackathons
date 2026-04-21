@@ -22,7 +22,7 @@ function Footer() {
                     <img src={assets.twitterIcon} alt="twitter-icon" className='w-6' /> 
 
                     {/* LinkedIn */}
-                    <img src={assets.linkedinIcon} alt="linkedin-icon" className='w-6' />
+                    <img src={assets.linkendinIcon} alt="linkedin-icon" className='w-6' />
 
 
                 </div>
@@ -31,16 +31,32 @@ function Footer() {
             <div className="font-playfair w-1/2 flex flex-wrap md:flex-nowrap justify-between">
                 <div>
                     <h2 className="font-semibold text-gray-900 mb-5">RESOURCES</h2>
-                    <ul className="text-sm text-gray-500 space-y-2 list-none">
+                    <ul className="mt3 flex flex-col gap-2 text-sm text-gray-500 list-none">
                         <li><a href="#">Documentation</a></li>
                         <li><a href="#">Tutorials</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Community</a></li>
                     </ul>
                 </div>
+
+                <div class="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-5">QUICK LINKS</h3>
+                        <ul class="mt-3 flex flex-col gap-2 text-sm text-gray-500 list-none">
+                            <li><a href="#" class="hover:underline transition">Home</a></li>
+                            <li><a href="#" class="hover:underline transition">Best Sellers</a></li>
+                            <li><a href="#" class="hover:underline transition">Offers & Deals</a></li>
+                            <li><a href="#" class="hover:underline transition">Contact Us</a></li>
+                            <li><a href="#" class="hover:underline transition">FAQs</a></li>
+                        </ul>
+                    </div>
+               </div>
+
+
+                
                 <div>
                     <h2 className="font-playfair font-semibold text-gray-900 mb-5">COMPANY</h2>
-                    <div className="text-sm text-gray-500 space-y-2 list-none">
+                    <div className="mt-3 flex flex-col gap-2 text-sm text-gray-500 list-none">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Privacy</a></li>
