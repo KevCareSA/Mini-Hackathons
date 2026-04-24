@@ -68,7 +68,7 @@ function Footer() {
     </div>
 
         <p className="py-4 text-center text-xs md:text-sm text-gray-500">
-            Copyright 2026 © <a href="https://prebuiltui.com">Hotel KevCare</a>. All Right Reserved.
+            © {new Date().getFullYear()} <a href="#">Hotel KevCare</a>. All Rights Reserved.
         </p>
 
     </div>
