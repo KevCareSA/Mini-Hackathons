@@ -28,7 +28,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="font-playfair w-1/2 flex flex-wrap md:flex-nowrap justify-between">
+            <div className="font-playfair w-full md:w-1/2 flex justify-center gap-20 md:gap-28 lg:gap-36">
                 <div>
                     <h2 className="font-semibold text-gray-900 mb-5">RESOURCES</h2>
                     <ul className="mt3 flex flex-col gap-2 text-sm text-gray-500 list-none">
@@ -39,7 +39,7 @@ function Footer() {
                     </ul>
                 </div>
 
-                <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
+               
                     <div>
                         <h3 className="font-semibold text-gray-900 mb-5">QUICK LINKS</h3>
                         <ul className="mt-3 flex flex-col gap-2 text-sm text-gray-500 list-none">
@@ -50,17 +50,17 @@ function Footer() {
                             <li><a href="#" className="hover:underline transition">FAQs</a></li>
                         </ul>
                     </div>
-               </div>
+               
 
-
-                
-                <div>
-                    <h2 className="font-playfair font-semibold text-gray-900 mb-5">COMPANY</h2>
-                    <div className="mt-3 flex flex-col gap-2 text-sm text-gray-500 list-none">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms</a></li>
+                <div >
+                    <div>
+                        <h2 className="font-playfair font-semibold text-gray-900 mb-5">COMPANY</h2>
+                        <div className="mt-3 flex flex-col gap-2 text-sm text-gray-500 list-none">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                        </div>
                     </div>
                 </div>
             </div>
