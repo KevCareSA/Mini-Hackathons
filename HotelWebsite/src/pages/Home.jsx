@@ -12,7 +12,6 @@ function Home() {
         <FeaturedDestination />
         <ExclusiveOffers/>
         <Testimonial />
-        <Footer/>
     </>
   )
 }
