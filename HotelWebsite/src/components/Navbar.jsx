@@ -30,7 +30,7 @@ function Navbar() {
 
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'Hotels', path: '/rooms' },
+        { name: 'Hotel', path: '/rooms' },
         { name: 'Experience', path: '/' },
         { name: 'About', path: '/' },
     ];
@@ -65,7 +65,7 @@ function Navbar() {
 
                 {/* Logo */}
                 <Link to={"/"}>
-                    <img src={assets.logo} alt="Logo" className={`h-9 ${isScrolled && "invert opacity-100"}`} />
+                    <img src={assets.logo3} alt="Logo" className={`h-9 ${isScrolled && "invert opacity-100"}`} />
                 </Link>
 
                 {/* Desktop Nav */}
