@@ -3,10 +3,12 @@ import { facilityIcons, roomsDummyData } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
 import StarRating from '../components/StarRating'
 import { assets } from '../assets/assets'
+import { useState } from 'react'
 
 
 function AllRooms() {
   const navigate = useNavigate();
+  const [openFilters, setOpenFilters] = useState(false);
 
   return (
     <div className='flex flex-col-reverse lg:flex-row items-start justify-between 
@@ -25,7 +27,7 @@ function AllRooms() {
                  src={room.images[0]} alt='hote-img' title='View Room Details' 
                  className='max-h-65 md:w-1/2 rounded-x1 shadow-lg object-cover cursor-pointer' />
 
-            <div className='md:w-1/2 flex flex-col gap-2'>
+            <div className='md:w-1/2 flex flex-col gap-1'>
               <p className='text-gray-500'>{room.hotel.city}</p>
               <p onClick={() => {navigate(`/rooms/${room._id}`); window.scrollTo(0, 0)}}
                  className='text-gray-800 text-3xl font-playfair 
@@ -42,15 +44,21 @@ function AllRooms() {
               </div>
 
               {/* Room Amenities */}
-              <div className='flex flex-wrap items-center mb-6 gap-4 mt-3'>
+              <div className='flex flex-wrap items-center mb-6 gap-3 mt-2'>
                 {room.amenities.map((item, index) => (
-                  <div key={index} className='flex items-center gap-2 px-3 py-2 
+                  <div key={index} className='flex items-center gap-3 px-3 py-2 
                    rounded-md bg-[#F5F5FF]/70'>
                     <img src={facilityIcons[item]} alt={item}
                          className='w-5 h-5' />
                     <p className='text-sm text-gray-600'>{item}</p>
                   </div>
                 ))}
+              </div>
+              {/* Room Price Per Night */}
+              <div className='flex items-center gap-2'>
+                <p className='text-xl font-medium text-gray-600'>
+                  ${room.pricePerNight.toFixed(2)}</p>
+                <p className='text-gray-500'>/night</p>
               </div>
 
              </div>
@@ -60,7 +68,27 @@ function AllRooms() {
       </div>
 
       {/* Filters */}
-      <div>
+      <div className='w-80 border border-gray-200 text-gray-600 
+       max-lg:mb-8 min-lg:mt-16'>
+
+        <div className={`flex items-center justify-between px-5 py-2.5 
+              min-lg:border-b border-gray-300 ${openFilters && "border-b"}`}>
+          <p className='text-base font-medium text-gray-800'>FILTERS</p>
+          <div className='text-xs cursor-pointer'>
+            <span onClick={()=> setOpenFilters(!openFilters)}
+                  className='lg:hidden'>{openFilters ? 'HIDE' : 'SHOW'}</span>
+            <span className='hidden lg:block'>CLEAR</span>
+          </div>
+        </div>
+
+        <div className={`${openFilters ? 'h-auto' : 'h-0 lg:h-auto'} 
+            overflow-hidden transition-all duration-700`}>
+              <div className='px-5 pt-5'>
+                <p className='font-medium text-gray-800 pb-2'>Popular Filters</p>
+              </div>
+        </div>
+
+
 
       </div>
     </div>
