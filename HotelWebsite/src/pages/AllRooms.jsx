@@ -1,5 +1,5 @@
 import React from 'react'
-import { roomsDummyData } from '../assets/assets'
+import { facilityIcons, roomsDummyData } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
 import StarRating from '../components/StarRating'
 import { assets } from '../assets/assets'
@@ -39,6 +39,18 @@ function AllRooms() {
               <div>
                 <img src={assets.locationIcon} alt='location-icon' />
                 <span className='ml-1 text-gray-500'>{room.hotel.address}</span>
+              </div>
+
+              {/* Room Amenities */}
+              <div className='flex flex-wrap items-center mb-6 gap-4 mt-3'>
+                {room.amenities.map((item, index) => (
+                  <div key={index} className='flex items-center gap-2 px-3 py-2 
+                   rounded-md bg-[#F5F5FF]/70'>
+                    <img src={facilityIcons[item]} alt={item}
+                         className='w-5 h-5' />
+                    <p className='text-sm text-gray-600'>{item}</p>
+                  </div>
+                ))}
               </div>
 
              </div>
