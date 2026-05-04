@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { facilityIcons, roomsDummyData } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
 import StarRating from '../components/StarRating'
 import { assets } from '../assets/assets'
-import { useState } from 'react'
 
 
 function AllRooms() {
