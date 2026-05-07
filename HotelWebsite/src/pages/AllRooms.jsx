@@ -4,10 +4,79 @@ import { useNavigate } from 'react-router-dom'
 import StarRating from '../components/StarRating'
 import { assets } from '../assets/assets'
 
+const CheckBox = ({
+    label,
+    selected = false,
+    onChange = () => {} }) => {
+    return (
+        <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
+            
+            <input
+                type="checkbox"
+                checked={selected}
+                onChange={(e) => onChange(e.target.checked, label)}
+            />
+
+            <span className="font-light select-none">
+                {label}
+            </span>
+
+        </label>
+    )
+}
+
+const RadioButton = ({
+    label,
+    selected = false,
+    onChange = () => {}
+}) => {
+    return (
+        <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
+
+            <input
+                type="radio"
+                name="sortOption"
+                checked={selected}
+                onChange={() => onChange(label)}
+            />
+
+            <span className="font-light select-none">
+                {label}
+            </span>
+
+        </label>
+    )
+}
+
 
 function AllRooms() {
   const navigate = useNavigate();
   const [openFilters, setOpenFilters] = useState(false);
+
+  const roomTypes = [
+    "Single Bed",
+    "Double Bed",
+    "Luxury Suite",
+    "Family Room",
+    "Family Suite"
+  ];
+  
+  const priceRanges = [
+    '0 - 500',
+    '500 - 1000', 
+    '1000 - 2000', 
+    '2000 - 3000', 
+  ];
+
+  const sortOptions = [
+    'Price: Low to High',
+    'Price: High to Low',
+    'Rating: High to Low',
+    'Rating: Low to High',
+    'Newest First',
+  ];
+
+
 
   return (
     <div className='flex flex-col-reverse lg:flex-row items-start justify-between 
@@ -84,6 +153,32 @@ function AllRooms() {
             overflow-hidden transition-all duration-700`}>
               <div className='px-5 pt-5'>
                 <p className='font-medium text-gray-800 pb-2'>Popular Filters</p>
+                {roomTypes.map((room, index) => (
+                  <CheckBox
+                    key={index}
+                    label={room}
+                  />
+                ))}
+              </div>
+              
+              <div className='px-5 pt-5'>
+                <p className='font-medium text-gray-800 pb-2'>Price Range</p>
+                {priceRanges.map((range, index) => (
+                  <CheckBox
+                    key={index}
+                    label={`R ${range}`} 
+                  />
+                ))}
+              </div>
+              
+              <div className='px-5 pt-5'>
+                <p className='font-medium text-gray-800 pb-2'>Sort By</p>
+                {sortOptions.map((option, index) => (
+                  <RadioButton
+                    key={index}
+                    label={option} 
+                  />
+                ))}
               </div>
         </div>
 
